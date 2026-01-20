@@ -1,6 +1,14 @@
 ## Generate a comprehensive key notes of the video by Watching till end and extracting video content. Review if you have completed watching till end before creating the key notes. Take into consideration of all slides and transcript for creating key notes. Check how many sections are there and cover everything
 
 
+- Watching entire video
+- Extract all slide content and visual elements
+- Capture transcript and narration details
+- Identify video sections and structure
+- Synthesize comprehensive notes with hierarchical structure
+
+
+
 Here’s an improved version of your prompt, structured to be clearer, more actionable, and to ensure higher quality output:
 
 ---

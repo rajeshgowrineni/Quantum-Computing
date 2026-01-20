@@ -1,0 +1,3 @@
+- <https://swayam.gov.in/mycourses>
+- [https://nptel.ac.in/courses/106106232](https://nptel.ac.in/courses/106106232) - Introduction to Quantum Computing: Quantum Algorithms and Qiskit, IBM and IITM
+- [https://nptel.ac.in/courses/106104845](https://nptel.ac.in/courses/106104845) - Quantum Computing: Algorithms and Limitations Through the Query Model, IIT Kanpur
