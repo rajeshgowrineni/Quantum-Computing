@@ -134,8 +134,13 @@ pip install qiskit qiskit-aer matplotlib
 ```python
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 from qiskit_aer import AerSimulator
-from qiskit.visualization import plot_histogram
+from qiskit.visualization import plot_histogram, circuit_drawer
 import matplotlib.pyplot as plt
+
+import io
+import sys
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
 
 # Create quantum and classical registers
 qubits = QuantumRegister(2, 'q')      # 2 quantum bits
