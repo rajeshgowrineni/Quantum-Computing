@@ -184,6 +184,15 @@ plt.show()
 Extend the Bell state circuit to three qubits:
 
 ```python
+import io
+import sys
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
+from qiskit_aer import AerSimulator
+from qiskit.visualization import plot_histogram
+import matplotlib.pyplot as plt
+
 # Challenge 1: GHZ State (3-qubit entanglement)
 ghz_qubits = QuantumRegister(3, 'q')
 ghz_cbits = ClassicalRegister(3, 'c')
@@ -201,10 +210,13 @@ print(ghz_circuit)
 simulator = AerSimulator()
 job = simulator.run(ghz_circuit, shots=1024)
 counts = job.result().get_counts()
+
 print("\nGHZ State Results:")
 print(counts)
-
 # Expected: ~50% '000' and ~50% '111', nothing else!
+
+plot_histogram(counts)
+plt.show()
 ```
 
 ### Challenge 2: SWAP Decomposition
@@ -212,6 +224,15 @@ print(counts)
 Verify that three CNOTs can swap two qubits:
 
 ```python
+import io
+import sys
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
+from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
+from qiskit_aer import AerSimulator
+from qiskit.visualization import plot_histogram
+import matplotlib.pyplot as plt
+
 # Challenge 2: SWAP Decomposition
 swap_qubits = QuantumRegister(2, 'q')
 swap_cbits = ClassicalRegister(2, 'c')
@@ -224,7 +245,6 @@ swap_circuit.x(0)              # X gate flips q0 to |1>
 swap_circuit.cx(0, 1)
 swap_circuit.cx(1, 0)
 swap_circuit.cx(0, 1)
-
 swap_circuit.measure([0, 1], [0, 1])
 
 print(swap_circuit)
@@ -233,11 +253,14 @@ print(swap_circuit)
 simulator = AerSimulator()
 job = simulator.run(swap_circuit, shots=1024)
 counts = job.result().get_counts()
+
 print("\nSWAP Results:")
 print(counts)
-
 # Expected: All outcomes should be '01'
 # (q0 started as 1, q1 started as 0, they swapped!)
+
+plot_histogram(counts)
+plt.show()
 ```
 
 ---
